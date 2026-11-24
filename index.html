@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Moongate Vault — Ultima Online Client Assets</title>
+<meta name="description" content="A community vault of Ultima Online client assets — animations, art, gumps, maps, sounds, fonts, hues, paperdoll, multis and textures — kept by their original artists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">&#9790;</div>
+      <div>
+        <h1>The Moongate Vault</h1>
+        <p class="tagline">Client assets for Ultima Online, kept by their artists.</p>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#vault">The Vault</a>
+      <a href="#chronicle">Chronicle</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="vault">
+    <h2>Step through the moongate.</h2>
+    <p>Animations, item art, gumps, maps, music and more — gathered from the community's artists and shard-builders, free to download for your own Ultima Online work. Every piece is credited to the artist who made it.</p>
+    <p class="hero-counts" id="heroCounts">The vault awaits its first works.</p>
+  </section>
+
+  <section class="controls" aria-label="Browse controls">
+    <input id="searchBox" type="search" placeholder="Search the vault — title, artist, tag…" autocomplete="off">
+    <select id="sortSelect" aria-label="Sort assets">
+      <option value="newest">Newest first</option>
+      <option value="downloads">Most downloaded</option>
+      <option value="name">Name, A–Z</option>
+    </select>
+  </section>
+
+  <section class="gates" id="gates" aria-label="Categories"></section>
+
+  <section class="grid" id="assetGrid" aria-live="polite"></section>
+  <div class="empty" id="emptyState" hidden>
+    <p class="empty-sigil" aria-hidden="true">&#9790;</p>
+    <p id="emptyText">Nothing in this part of the vault yet.</p>
+  </div>
+
+  <section class="chronicle" id="chronicle">
+    <h2>The Chronicle</h2>
+    <p class="section-note">News from the Vault — new arrivals, artist spotlights, and notes from the Keeper.</p>
+    <div id="postList"></div>
+    <div class="empty" id="postsEmpty" hidden>
+      <p>No chronicle entries yet. The Keeper has not yet taken up the quill.</p>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About the Vault</h2>
+    <p>The Moongate Vault is a community library of Ultima Online client assets. Files are hosted by their artists — on GitHub, Google Drive, Terabox, or wherever they keep them — and the Vault links out to them. Nothing here is re-hosted or claimed by the Vault itself.</p>
+    <p>Artists: every work is credited to its original artist by name. If a piece is yours and the credit is wrong, or you want it removed, tell the Keeper.</p>
+    <p>To offer a work for the Vault, or to open your own page of works, visit the Vault itself and create an account — submissions are reviewed by the Keeper before they go live.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>The Moongate Vault — Ultima Online client assets, kept by their artists.</p>
+    <p class="fine">Ultima Online is a trademark of Electronic Arts Inc. This is a fan community project, not affiliated with Electronic Arts or Broadsword.</p>
+  </div>
+</footer>
+
+<div class="modal" id="assetModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-panel">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+</body>
+</html>
